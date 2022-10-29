@@ -8,7 +8,8 @@ func main(){
 	var pin int
 	var changedPin int
 	var userOption int
-	var accountBalance int
+	var accountBalance int = 50
+	var withdrawalAmount int
 
 	fmt.Println("Hello dear user, Welcome to the ATM machine")
 	
@@ -32,6 +33,13 @@ func main(){
 
 	if userOption == 2 {
 		fmt.Println("Your account balance is:", accountBalance)
+	}
+	
+	if userOption == 3 {
+		fmt.Println("How much do you want to withdraw?")
+		fmt.Scanln(&withdrawalAmount)
+		newBalance := accountBalance - withdrawalAmount
+		fmt.Printf("Withdrawal successfully!. Your new balance is %v\n", newBalance)
 	}
 
 }
