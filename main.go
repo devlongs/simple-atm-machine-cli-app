@@ -6,10 +6,11 @@ import (
 
 func main(){
 	var pin int
-	var changedPin int
+	var changedPin int = 0000 // default pin
 	var userOption int
-	var accountBalance int = 50
+	var accountBalance int 
 	var withdrawalAmount int
+	var depositAmount int
 
 	fmt.Println("Hello dear user, Welcome to the ATM machine")
 	
@@ -38,8 +39,15 @@ func main(){
 	if userOption == 3 {
 		fmt.Println("How much do you want to withdraw?")
 		fmt.Scanln(&withdrawalAmount)
-		newBalance := accountBalance - withdrawalAmount
-		fmt.Printf("Withdrawal successfully!. Your new balance is %v\n", newBalance)
+		accountBalance := accountBalance - withdrawalAmount
+		fmt.Printf("Withdrawal successfully!. Your new balance is %v\n", accountBalance)
+	}
+
+	if userOption == 4 {
+		fmt.Println("How much do you want to deposit?")
+		fmt.Scanln(&depositAmount)
+		accountBalance = accountBalance + depositAmount
+		fmt.Printf("Deposit successfully!. Your new balance is %v\n", accountBalance)
 	}
 
 }
